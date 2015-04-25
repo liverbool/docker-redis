@@ -1,5 +1,12 @@
 FROM ubuntu:trusty
-MAINTAINER Fernando Mayo <fernando@tutum.co>
+MAINTAINER Fernando Mayo <fernando@tutum.co>, Liverbool "nukboon@gmail.com"
+
+# Install packages
+RUN locale-gen en_US.UTF-8
+RUN export LANG=en_US.UTF-8
+RUN export LC_ALL=en_US.UTF-8
+
+RUN echo 'Asia/Bangkok' | sudo tee /etc/timezone
 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv C7917B12 && \
     apt-get update && \
